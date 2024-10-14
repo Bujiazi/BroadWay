@@ -5,8 +5,13 @@
 <div>
     <a href="https://github.com/Bujiazi/" target="_blank">Jiazi Bu*</a><sup></sup> | 
     <a href="https://github.com/LPengYang/" target="_blank">Pengyang Ling*</a><sup></sup> | 
-    <a href="https://yumingj.github.io/" target="_blank">Yuming Jiang</a><sup></sup> | 
-    <a href="https://liuziwei7.github.io/" target="_blank">Ziwei Liu</a><sup></sup>
+    <a href="https://panzhang0212.github.io/" target="_blank">Pan Zhang<sup>†</sup></a><sup></sup> | 
+    <a href="https://wutong16.github.io/" target="_blank">Tong Wu</a><sup></sup> |
+    <a href="https://scholar.google.com/citations?user=FscToE0AAAAJ&hl=en/" target="_blank">Xiaoyi Dong</a><sup></sup> |
+    <a href="https://yuhangzang.github.io/" target="_blank">Yuhang Zang</a><sup></sup> |
+    <a href="https://scholar.google.com/citations?hl=zh-CN&user=sJkqsqkAAAAJ" target="_blank">Yuhang Cao</a><sup></sup> |
+    <a href="http://dahua.site/" target="_blank">Dahua Lin</a><sup></sup> |
+    <a href="https://myownskyw7.github.io/" target="_blank">Jiaqi Wang<sup>†</sup></a><sup></sup>
 </div>
 <div>
     <sup></sup>S-Lab, Nanyang Technological University
