@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>BroadWay: Boost Your Text-to-Video Generation Model in a Training-free Way</h1>
+<h1>BroadWay: Boost Your Text-to-Video Generation Model in a <br> Training-free Way</h1>
 
 <div>
     <a href="https://github.com/Bujiazi/" target="_blank">Jiazi Bu*</a><sup></sup> | 
@@ -13,10 +13,11 @@
     <a href="http://dahua.site/" target="_blank">Dahua Lin</a><sup></sup> |
     <a href="https://myownskyw7.github.io/" target="_blank">Jiaqi Wang<sup>†</sup></a><sup></sup>
 </div>
+<br>
 <div>
-    <sup></sup>S-Lab, Nanyang Technological University
+    <sup></sup>Shanghai Jiao Tong University, University of Science and Technology of China, <br> The Chinese University of Hong Kong, Shanghai Artificial Intelligence Laboratory
 </div>
-
-
+(*<b>Equal Contribution</b>)(<sup>†</sup><b>Corresponding Author</b>)
+<br><br>
 
 [![arXiv](https://img.shields.io/badge/arXiv-2410.06241-b31b1b.svg)](https://arxiv.org/abs/2410.06241) [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://bujiazi.github.io/motionclone.github.io/) 
