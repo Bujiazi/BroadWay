@@ -106,7 +106,7 @@ def motion_enhance(attn_prob, tau, beta):
 # ---------- Temporal Self Guidance ----------
 E1 = compute_energy(attention_probs)
 attention_probs_up1 = interpolate(attention_probs_up1)
-attention_probs = alpha * attention_probs_up1 + (1 - alpha) * attention_probs
+attention_probs = attention_probs + alpha * (attention_probs_up1 - attention_probs)
 E2 = compute_energy(attention_probs)
 
 # ---------- Fourier-based Motion Enhancement ----------
