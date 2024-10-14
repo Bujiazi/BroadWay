@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>BroadWay: Boost Your Text-to-Video Generation Model in <br>a Training-free Way</h1>
+<h1>BroadWay: Boost Your Text-to-Video Generation Model in a Training-free Way</h1>
 
 <div>
     <a href="https://github.com/Bujiazi/" target="_blank">Jiazi Bu*</a><sup></sup> | 
@@ -31,12 +31,17 @@
 </div>
 <br>
 
+
 <details><summary>📖 Click for the full abstract of BroadWay</summary>
+
+<div align="left">
 
 > The text-to-video (T2V) generation models, offering convenient visual creation, have recently garnered increasing attention. Despite their substantial potential, the generated videos may present artifacts, including structural implausibility, temporal inconsistency, and a lack of motion, often resulting in near-static video. In this work, we have identified a correlation between the disparity of temporal attention maps across different blocks and the occurrence of temporal inconsistencies. Additionally, we have observed that the energy contained within the temporal attention maps is directly related to the magnitude of motion amplitude in the generated videos. Based on these observations, we present **BroadWay**, a training-free method to improve the quality of text-to-video generation without introducing additional parameters, augmenting memory or sampling time. Specifically, BroadWay is composed of two principal components: 1) Temporal Self-Guidance improves the structural plausibility and temporal consistency of generated videos by reducing the disparity between the temporal attention maps across various decoder blocks. 2) Fourier-based Motion Enhancement enhances the magnitude and richness of motion by amplifying the energy of the map. Extensive experiments demonstrate that BroadWay significantly improves the quality of text-to-video generation with negligible additional cost.
 </details>
+</div>
 
 </div>
+
 
 ## 🎈Demo
 
