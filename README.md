@@ -137,6 +137,11 @@ E3 = compute_energy(attention_probs)
 # BroadWay operations are performed in the first 20% denosing steps, in each temporal attention module including up_blocks.1/2/3
 ```
 
+## 🔑 Usage
+
+BroadWay operations are performed after the vanilla temporal attention operations
+
+
 ## 🔧 BroadWay Parameters
 
 Here, we provide some reference configurations for BroadWay Parameters. You can adjust these parameters based on your own model and task requirements:
