@@ -158,9 +158,9 @@ If you find this work helpful, please cite the following paper:
 
 ## 📣 Disclaimer
 
-This is official code of [BroadWay](https://arxiv.org/abs/2410.06241).
+This is the official code of [BroadWay](https://arxiv.org/abs/2410.06241).
 All the copyrights of the demo images and audio are from community users. 
-Feel free to contact us if you would like remove them.
+Feel free to contact us if you would like to remove them.
 
 ## 💞 Acknowledgements
 Our code is built upon the below repositories, we thank all the contributors for open-sourcing.
