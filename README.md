@@ -20,7 +20,7 @@
 (*<b>Equal Contribution</b>)(<sup>†</sup><b>Corresponding Author</b>)
 <br><br>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2410.06241-b31b1b.svg)](https://arxiv.org/abs/2410.06241) [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://bujiazi.github.io/motionclone.github.io/) ![](https://img.shields.io/github/stars/Bujiazi/BroadWay?style=social) 
+[![arXiv](https://img.shields.io/badge/arXiv-2410.06241-b31b1b.svg)](https://arxiv.org/abs/2410.06241) [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://github.com/Bujiazi/BroadWay) ![](https://img.shields.io/github/stars/Bujiazi/BroadWay?style=social) 
 
 ---
 
@@ -50,6 +50,15 @@
 [![]](https://github.com/user-attachments/assets/dbaaf832-5ce4-4922-a48d-21a385cf108b)
 
 </div>
+
+## 🖋 News
+- Code released! (10.14)
+- Paper (**v1**) is available on arXiv! (10.8)
+
+## 🏗️ Todo
+- [ ] Release the project page
+- [x] Release the BroadWay code
+- [x] Release paper
 
 ## 💻 BroadWay Code
 ```python
