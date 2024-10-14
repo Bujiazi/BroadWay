@@ -30,3 +30,30 @@
 
 > The text-to-video (T2V) generation models, offering convenient visual creation, have recently garnered increasing attention. Despite their substantial potential, the generated videos may present artifacts, including structural implausibility, temporal inconsistency, and a lack of motion, often resulting in near-static video. In this work, we have identified a correlation between the disparity of temporal attention maps across different blocks and the occurrence of temporal inconsistencies. Additionally, we have observed that the energy contained within the temporal attention maps is directly related to the magnitude of motion amplitude in the generated videos. Based on these observations, we present **BroadWay**, a training-free method to improve the quality of text-to-video generation without introducing additional parameters, augmenting memory or sampling time. Specifically, BroadWay is composed of two principal components: 1) Temporal Self-Guidance improves the structural plausibility and temporal consistency of generated videos by reducing the disparity between the temporal attention maps across various decoder blocks. 2) Fourier-based Motion Enhancement enhances the magnitude and richness of motion by amplifying the energy of the map. Extensive experiments demonstrate that BroadWay significantly improves the quality of text-to-video generation with negligible additional cost.
 </details>
+
+</div>
+
+## 🎈Demo
+
+[![]](https://github.com/user-attachments/assets/e3289514-0ba8-4a6f-b792-58e4f78fc5db)
+
+## 💻 BroadWay Code
+
+
+## 📎 Citation 
+
+If you find this work helpful, please cite the following paper:
+
+```
+@article{bu2024broadway,
+  title={BroadWay: Boost Your Text-to-Video Generation Model in a Training-free Way},
+  author={Bu, Jiazi and Ling, Pengyang and Zhang, Pan and Wu, Tong and Dong, Xiaoyi and Zang, Yuhang and Cao, Yuhang and Lin, Dahua and Wang, Jiaqi},
+  journal={arXiv preprint arXiv:2410.06241},
+  year={2024}
+}
+```
+
+## 💞 Acknowledgements
+The code is built upon the below repositories, we thank all the contributors for open-sourcing.
+* [AnimateDiff](https://github.com/guoyww/AnimateDiff)
+* [VideoCrafter](https://github.com/AILab-CVC/VideoCrafter)
