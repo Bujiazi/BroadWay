@@ -20,7 +20,7 @@
 (*<b>Equal Contribution</b>)(<sup>†</sup><b>Corresponding Author</b>)
 <br><br>
 
-[![arXiv](https://img.shields.io/badge/arXiv-2410.06241-b31b1b.svg)](https://arxiv.org/abs/2410.06241) [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://github.com/Bujiazi/BroadWay) ![](https://img.shields.io/github/stars/Bujiazi/BroadWay?style=social) 
+[![arXiv](https://img.shields.io/badge/arXiv-2410.06241-b31b1b.svg)](https://arxiv.org/abs/2410.06241) [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://github.com/Bujiazi/BroadWay) (project page is coming soon!) ![](https://img.shields.io/github/stars/Bujiazi/BroadWay?style=social) 
 
 ---
 
@@ -131,6 +131,17 @@ attention_probs = motion_enhance(attention_probs, tau = tau, beta = beta)
 E3 = compute_energy(attention_probs)
 ```
 
+## 🔧 BroadWay Parameters
+
+Here, we provide some reference configurations for BroadWay Parameters. You can adjust these parameters based on your own model and task requirements:
+
+**AnimateDiff**:
+
+$\tau = 7, \alpha = 0.6, \beta = 1.5$
+
+**VideoCrafter2**:
+
+$\tau = 7, \alpha = 0.1, \beta = 10$
 
 ## 📎 Citation 
 
@@ -152,6 +163,6 @@ All the copyrights of the demo images and audio are from community users.
 Feel free to contact us if you would like remove them.
 
 ## 💞 Acknowledgements
-The code is built upon the below repositories, we thank all the contributors for open-sourcing.
+Our code is built upon the below repositories, we thank all the contributors for open-sourcing.
 * [AnimateDiff](https://github.com/guoyww/AnimateDiff)
 * [VideoCrafter](https://github.com/AILab-CVC/VideoCrafter)
