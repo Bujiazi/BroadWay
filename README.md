@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1>BroadWay: Boost Your Text-to-Video Generation Model in a <br> Training-free Way</h1>
+<h1>BroadWay: Boost Your Text-to-Video Generation Model in <br>a Training-free Way</h1>
 
 <div>
     <a href="https://github.com/Bujiazi/" target="_blank">Jiazi Bu*</a><sup></sup> | 
