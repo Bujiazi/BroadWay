@@ -66,7 +66,7 @@
 def compute_energy(attn_prob):
     num_frames = attn_prob.shape[-1]
     attn_prob_copy = attn_prob.reshape(2, -1, heads, num_frames, num_frames)
-    energy = (attn_prob_copy[-1] ** 2).mean(dim=1).mean(dim=1).sum(dim=-1).mean(dim=0)
+    energy = (attn_prob_copy[-1] ** 2).mean(dim=1).mean(dim=1).sum(dim=-1).mean(dim=0) # formula (4) in paper
     return energy
 
 # ---------- split high-frequency and low-frequency energy ----------
@@ -117,18 +117,24 @@ def motion_enhance(attn_prob, tau, beta):
     return attn_prob_scaled
 
 
+# attention_probs (shape [B * H * W, F, F]) is the softmax matrix after performing temporal self attention
+# attention_probs_up1 is the temporal attention map obtained from the corresponding module in up_blocks.1
+# alpha, beta and tau are BroadWay parameters
+
 # ---------- Temporal Self Guidance ----------
 E1 = compute_energy(attention_probs)
-attention_probs_up1 = interpolate(attention_probs_up1)
-attention_probs = attention_probs + alpha * (attention_probs_up1 - attention_probs)
+attention_probs_up1 = interpolate(attention_probs_up1) # interpolate in the spatial dimension
+attention_probs = attention_probs + alpha * (attention_probs_up1 - attention_probs) # formula (3) in paper
 E2 = compute_energy(attention_probs)
 
 # ---------- Fourier-based Motion Enhancement ----------
 E2_h, E2_l = split_freq(attention_probs, tau = tau)
 beta_c = torch.sqrt((E1 - E2_l) / E2_h)
-beta = max(beta, beta_c)
-attention_probs = motion_enhance(attention_probs, tau = tau, beta = beta)
+beta = max(beta, beta_c) # formula (7) in paper
+attention_probs = motion_enhance(attention_probs, tau = tau, beta = beta) # formula (6) in paper
 E3 = compute_energy(attention_probs)
+
+# BroadWay operations are performed in the first 20% denosing steps, in each temporal attention module including up_blocks.1/2/3
 ```
 
 ## 🔧 BroadWay Parameters
