@@ -39,8 +39,13 @@
 </div>
 
 ## 🎈Demo
+<div align="center">
+
+[![]](https://github.com/user-attachments/assets/37a2c14d-d9ee-484c-b1c7-344b6af96485)
 
 [![]](https://github.com/user-attachments/assets/e3289514-0ba8-4a6f-b792-58e4f78fc5db)
+
+</div>
 
 ## 💻 BroadWay Code
 
@@ -57,6 +62,12 @@ If you find this work helpful, please cite the following paper:
   year={2024}
 }
 ```
+
+## 📣 Disclaimer
+
+This is official code of [BroadWay](https://arxiv.org/abs/2410.06241).
+All the copyrights of the demo images and audio are from community users. 
+Feel free to contact us if you would like remove them.
 
 ## 💞 Acknowledgements
 The code is built upon the below repositories, we thank all the contributors for open-sourcing.
