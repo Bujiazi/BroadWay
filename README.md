@@ -139,7 +139,12 @@ E3 = compute_energy(attention_probs)
 
 ## 🔑 Usage
 
-BroadWay operations are performed after the vanilla temporal attention operations
+BroadWay operations are performed after the vanilla temporal attention operations.
+
+<div style="width: 100%; text-align: center; margin:auto;">
+    <img style="width:100%" src="__assets__/uasge.png">
+</div>
+<br>
 
 
 ## 🔧 BroadWay Parameters
