@@ -42,13 +42,80 @@
 
 <div align="center">
 
-[![]](https://github.com/user-attachments/assets/37a2c14d-d9ee-484c-b1c7-344b6af96485)
-
-[![]](https://github.com/user-attachments/assets/e3289514-0ba8-4a6f-b792-58e4f78fc5db)
+[![]](https://github.com/user-attachments/assets/dbaaf832-5ce4-4922-a48d-21a385cf108b)
 
 </div>
 
 ## 💻 BroadWay Code
+```python
+# ---------- compute the energy of temporal attention map ----------
+def compute_energy(attn_prob):
+    num_frames = attn_prob.shape[-1]
+    attn_prob_copy = attn_prob.reshape(2, -1, heads, num_frames, num_frames)
+    energy = (attn_prob_copy[-1] ** 2).mean(dim=1).mean(dim=1).sum(dim=-1).mean(dim=0)
+    return energy
+
+# ---------- split high-frequency and low-frequency energy ----------
+def split_freq(attn_prob, tau):
+    num_frames = attn_prob.shape[-1]
+    seq_index = num_frames // 2
+    attn_prob_dft = torch.fft.fft(attn_prob, dim=-1)
+    high_freq_indices = [idx for idx in range(num_frames) if seq_index - tau <=  idx  <=  seq_index + tau]
+    low_freq_indices = [idx for idx in range(num_frames) if idx not in high_freq_indices]
+    assert len(high_freq_indices) == 2 * tau + 1
+
+    high_freq = attn_prob_dft[..., high_freq_indices]
+    low_freq = attn_prob_dft[..., low_freq_indices]
+
+    high_freq_abs = torch.abs(high_freq)
+    low_freq_abs = torch.abs(low_freq)
+
+    high_freq_abs = high_freq_abs.reshape(2, -1, num_frames, len(high_freq_indices))
+    low_freq_abs = low_freq_abs.reshape(2, -1, num_frames, len(low_freq_indices))
+
+    Eh = (high_freq_abs[-1] ** 2).sum(dim=-1).mean(dim=0).mean(dim=0) / num_frames
+    El = (low_freq_abs[-1] ** 2).sum(dim=-1).mean(dim=0).mean(dim=0) / num_frames
+
+    return Eh, El
+
+# ---------- frequency component manipulation ----------
+def motion_enhance(attn_prob, tau, beta):
+
+    num_frames = attn_prob.shape[-1]
+    seq_index = num_frames // 2
+    attn_prob_dft = torch.fft.fft(attn_prob, dim=-1)
+    high_freq_indices = [idx for idx in range(num_frames) if seq_index - tau <=  idx  <=  seq_index + tau]
+    assert len(high_freq_indices) == 2 * tau + 1
+
+    high_freq = attn_prob_dft[..., high_freq_indices]
+    high_freq_scaled = high_freq * beta 
+    attn_prob_dft[..., high_freq_indices] = high_freq_scaled
+
+    attn_prob_scaled = torch.fft.ifft(attn_prob_dft, dim=-1).real
+
+    mask = (attn_prob_scaled > 0)
+    attn_prob_scaled *= mask
+
+    sum_dim = attn_prob_scaled.sum(dim=-1, keepdim = True)
+    attn_prob_scaled /= sum_dim
+    attn_prob_scaled = attn_prob_scaled.reshape(-1, num_frames, num_frames)
+
+    return attn_prob_scaled
+
+
+# ---------- Temporal Self Guidance ----------
+E1 = compute_energy(attention_probs)
+attention_probs_up1 = interpolate(attention_probs_up1)
+attention_probs = alpha * attention_probs_up1 + (1 - alpha) * attention_probs
+E2 = compute_energy(attention_probs)
+
+# ---------- Fourier-based Motion Enhancement ----------
+E2_h, E2_l = split_freq(attention_probs, tau = tau)
+beta_c = torch.sqrt((E1 - E2_l) / E2_h)
+beta = max(beta, beta_c)
+attention_probs = motion_enhance(attention_probs, tau = tau, beta = beta)
+E3 = compute_energy(attention_probs)
+```
 
 
 ## 📎 Citation 
